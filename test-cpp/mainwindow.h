@@ -16,6 +16,12 @@ public:
     ~MainWindow();
 
 private:
+    void onSettings();
+    void onMainView();
+    void onScanView();
+    void onCartView();
+
+private:
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
