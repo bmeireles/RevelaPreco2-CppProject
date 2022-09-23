@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>Cart.png</file>
+        <file>home_icon.png</file>
+        <file>qrcode_icon.png</file>
+        <file>quit_icon.png</file>
+        <file>settings_icon.png</file>
     </qresource>
 </RCC>
