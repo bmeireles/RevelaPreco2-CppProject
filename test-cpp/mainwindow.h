@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QStringListModel>
-#include "SettingsDialog.h"
+#include "settingsdialog.h"
 #include "listmodel.h"
 
 QT_BEGIN_NAMESPACE
