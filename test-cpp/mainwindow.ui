@@ -20,17 +20,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="pageMain">
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Main view</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
+      <widget class="MainView" name="pageMain"/>
       <widget class="QWidget" name="pageScan">
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
@@ -146,6 +136,14 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MainView</class>
+   <extends>QWidget</extends>
+   <header>mainview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -1,0 +1,20 @@
+[
+	{
+		"id": "001",
+		"name": "Apple",
+		"price": 1.23,
+		"pictureFilePath": ""
+	},
+	{
+		"id": "002",
+		"name": "Banana",
+		"price": 2.34,
+		"pictureFilePath": ""
+	},
+	{
+		"id": "003",
+		"name": "Orange",
+		"price": 3.45,
+		"pictureFilePath": ""
+	}
+]
