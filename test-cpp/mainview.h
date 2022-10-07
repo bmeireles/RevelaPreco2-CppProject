@@ -3,6 +3,7 @@
 
 #include "itemlist.h"
 
+#include <QTableView>
 #include <QWidget>
 
 class MainView : public QWidget
@@ -16,6 +17,8 @@ signals:
 
 private:
     ItemList* itemList{nullptr};
+    ItemModel* model{nullptr};
+    QTableView* view{nullptr};
 };
 
 #endif // MAINVIEW_H
