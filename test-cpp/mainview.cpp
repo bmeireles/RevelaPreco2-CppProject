@@ -12,4 +12,15 @@ MainView::MainView(QWidget *parent)
 
     itemList = new ItemList();
     itemList->loadFromFile("items.json");
+
+    model = new ItemModel(this);
+    model->setList(itemList);
+
+    view = new QTableView();
+    layout->addWidget(view);
+
+    view->setModel(model);
+    view->setSortingEnabled(true);
+    view->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
 }

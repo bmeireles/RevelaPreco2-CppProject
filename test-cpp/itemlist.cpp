@@ -50,20 +50,40 @@ void ItemList::loadFromFile(const QString &filePath)
 
 void ItemList::addItem(const Item &item)
 {
-    if (items.contains(item.id))
+    if (findItem(item.id) != -1)
         return;
 
-    items[item.id] = item;
+    items.append(item);
 }
 
 void ItemList::removeItem(const QString &id)
 {
-    items.remove(id);
+    int index = findItem(id);
+    items.remove(index);
 }
 
 void ItemList::updateItem(const Item &item)
 {
-    items[item.id] = item;
+    int index = findItem(item.id);
+    if (index == -1)
+        return;
+
+    items[index] = item;
+}
+
+int ItemList::findItem(const QString& id)
+{
+    int index = 0;
+    for (const auto& item: items) {
+        if (item.id == id)
+            return index;
+        index ++;
+    }
+    return -1;
+}
+
+QList<Item>& ItemList::getItems() {
+    return items;
 }
 
 QJsonObject Item::toJson() const
@@ -85,3 +105,83 @@ void Item::fromJson(const QJsonObject &obj)
     price = obj["price"].toDouble();
     pictureFilePath = obj["pictureFilePath"].toString();
 }
+
+ItemModel::ItemModel(QObject *parent) : QAbstractTableModel(parent)
+{
+
+}
+
+void ItemModel::setList(ItemList *list)
+{
+    this->list = list;
+}
+
+int ItemModel::rowCount(const QModelIndex &parent) const
+{
+    return list->getItems().count();
+}
+
+int ItemModel::columnCount(const QModelIndex& parent) const
+{
+    return 4;
+}
+
+QVariant ItemModel::data(const QModelIndex& index, int role) const
+{
+    if (!index.isValid())
+        return {};
+
+    if (role != Qt::DisplayRole)
+        return {};
+
+    auto data = list->getItems();
+    switch (index.column()) {
+    case 0:
+        return data[index.row()].id;
+    case 1:
+        return data[index.row()].name;
+    case 2:
+        return data[index.row()].price;
+    case 3:
+        return data[index.row()].pictureFilePath;
+    }
+    return {};
+}
+
+QVariant ItemModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
+        switch (section) {
+        case 0:
+            return QString("ID");
+        case 1:
+            return QString("Name");
+        case 2:
+            return QString("Price");
+        case 3:
+            return QString("Picture");
+        }
+    }
+    return QVariant();
+}
+
+//void ItemModel::setList(ItemList* list)
+//{
+//    auto data = list->getItems();
+//    setColumnCount(4);
+//    setHeaderData(0, Qt::Horizontal, "ID");
+//    setHeaderData(1, Qt::Horizontal, "Name");
+//    setHeaderData(2, Qt::Horizontal, "Price");
+//    setHeaderData(3, Qt::Horizontal, "Picture");
+//    setRowCount(data.count());
+
+//    int row = 0;
+//    for (auto itr = data.begin(); itr != data.end(); itr ++) {
+//        qDebug() << itr.key() << " " << itr.value().name;
+//        setData(index(row, 0), itr.value().id);
+//        setData(index(row, 1), itr.value().name);
+//        setData(index(row, 2), itr.value().price);
+//        setData(index(row, 3), itr.value().pictureFilePath);
+//        row ++;
+//    }
+//}
