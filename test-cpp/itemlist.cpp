@@ -1,4 +1,5 @@
 #include "itemlist.h"
+#include "listviewdelegate.h"
 
 #include <QDebug>
 #include <QFile>
@@ -106,82 +107,82 @@ void Item::fromJson(const QJsonObject &obj)
     pictureFilePath = obj["pictureFilePath"].toString();
 }
 
-ItemModel::ItemModel(QObject *parent) : QAbstractTableModel(parent)
+ItemModel::ItemModel(QObject *parent) : QStandardItemModel(parent)
 {
 
 }
 
-void ItemModel::setList(ItemList *list)
-{
-    this->list = list;
-}
-
-int ItemModel::rowCount(const QModelIndex &parent) const
-{
-    return list->getItems().count();
-}
-
-int ItemModel::columnCount(const QModelIndex& parent) const
-{
-    return 4;
-}
-
-QVariant ItemModel::data(const QModelIndex& index, int role) const
-{
-    if (!index.isValid())
-        return {};
-
-    if (role != Qt::DisplayRole)
-        return {};
-
-    auto data = list->getItems();
-    switch (index.column()) {
-    case 0:
-        return data[index.row()].id;
-    case 1:
-        return data[index.row()].name;
-    case 2:
-        return data[index.row()].price;
-    case 3:
-        return data[index.row()].pictureFilePath;
-    }
-    return {};
-}
-
-QVariant ItemModel::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
-        switch (section) {
-        case 0:
-            return QString("ID");
-        case 1:
-            return QString("Name");
-        case 2:
-            return QString("Price");
-        case 3:
-            return QString("Picture");
-        }
-    }
-    return QVariant();
-}
-
-//void ItemModel::setList(ItemList* list)
+//void ItemModel::setList(ItemList *list)
 //{
-//    auto data = list->getItems();
-//    setColumnCount(4);
-//    setHeaderData(0, Qt::Horizontal, "ID");
-//    setHeaderData(1, Qt::Horizontal, "Name");
-//    setHeaderData(2, Qt::Horizontal, "Price");
-//    setHeaderData(3, Qt::Horizontal, "Picture");
-//    setRowCount(data.count());
-
-//    int row = 0;
-//    for (auto itr = data.begin(); itr != data.end(); itr ++) {
-//        qDebug() << itr.key() << " " << itr.value().name;
-//        setData(index(row, 0), itr.value().id);
-//        setData(index(row, 1), itr.value().name);
-//        setData(index(row, 2), itr.value().price);
-//        setData(index(row, 3), itr.value().pictureFilePath);
-//        row ++;
-//    }
+//    this->list = list;
 //}
+
+//int ItemModel::rowCount(const QModelIndex &parent) const
+//{
+//    return list->getItems().count();
+//}
+
+//int ItemModel::columnCount(const QModelIndex& parent) const
+//{
+//    return 4;
+//}
+
+//QVariant ItemModel::data(const QModelIndex& index, int role) const
+//{
+//    if (!index.isValid())
+//        return {};
+
+//    if (role != Qt::DisplayRole)
+//        return {};
+
+//    auto data = list->getItems();
+//    switch (index.column()) {
+//    case 0:
+//        return data[index.row()].id;
+//    case 1:
+//        return data[index.row()].name;
+//    case 2:
+//        return data[index.row()].price;
+//    case 3:
+//        return data[index.row()].pictureFilePath;
+//    }
+//    return {};
+//}
+
+//QVariant ItemModel::headerData(int section, Qt::Orientation orientation, int role) const
+//{
+//    if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
+//        switch (section) {
+//        case 0:
+//            return QString("ID");
+//        case 1:
+//            return QString("Name");
+//        case 2:
+//            return QString("Price");
+//        case 3:
+//            return QString("Picture");
+//        }
+//    }
+//    return QVariant();
+//}
+
+void ItemModel::setList(ItemList* list)
+{
+    auto data = list->getItems();
+    setColumnCount(4);
+    setHeaderData(0, Qt::Horizontal, "ID");
+    setHeaderData(1, Qt::Horizontal, "Name");
+    setHeaderData(2, Qt::Horizontal, "Price");
+    setHeaderData(3, Qt::Horizontal, "Picture");
+    setRowCount(data.count());
+
+    int row = 0;
+    for (auto itr = data.begin(); itr != data.end(); itr ++) {
+        setData(index(row, 0), itr->id);
+        setData(index(row, 0), itr->name, ListViewDelegate::DataRole::TitleRole);
+        setData(index(row, 0), itr->price, ListViewDelegate::DataRole::TextRole);
+        QIcon icon(itr->pictureFilePath);
+        setData(index(row, 0), icon, Qt::DecorationRole);
+        row ++;
+    }
+}

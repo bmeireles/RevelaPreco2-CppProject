@@ -3,7 +3,8 @@
 
 #include "itemlist.h"
 
-#include <QTableView>
+#include <QListView>
+#include <QStackedWidget>
 #include <QWidget>
 
 class MainView : public QWidget
@@ -12,13 +13,14 @@ class MainView : public QWidget
 public:
     explicit MainView(QWidget *parent = nullptr);
 
-signals:
-
+private:
+    void onItemClicked(const QModelIndex &index);
 
 private:
     ItemList* itemList{nullptr};
     ItemModel* model{nullptr};
-    QTableView* view{nullptr};
+    QListView* view{nullptr};
+    QStackedWidget* stackedWidget{nullptr};
 };
 
 #endif // MAINVIEW_H

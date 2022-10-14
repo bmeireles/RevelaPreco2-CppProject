@@ -3,18 +3,18 @@
 		"id": "001",
 		"name": "Apple",
 		"price": 12.3,
-		"pictureFilePath": ""
+		"pictureFilePath": "Cart.png"
 	},
 	{
 		"id": "002",
 		"name": "Orange",
 		"price": 2.34,
-		"pictureFilePath": ""
+		"pictureFilePath": "Cart.png"
 	},
 	{
 		"id": "003",
 		"name": "Banana",
 		"price": 3.45,
-		"pictureFilePath": ""
+		"pictureFilePath": "Cart.png"
 	}
 ]
