@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     itemlist.cpp \
     listmodel.cpp \
+    listviewdelegate.cpp \
     main.cpp \
     mainview.cpp \
     mainwindow.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 HEADERS += \
     itemlist.h \
     listmodel.h \
+    listviewdelegate.h \
     mainview.h \
     mainwindow.h \
     settingsdialog.h
