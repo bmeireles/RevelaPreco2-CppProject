@@ -1,20 +1,69 @@
 [
 	{
 		"id": "001",
-		"name": "Apple",
-		"price": 12.3,
-		"pictureFilePath": "Cart.png"
+		"name": "Organic Pink Lady Apples Bag / 2 lb bag",
+		"price": 3.99,
+		"pictureFilePath": ":/images/apples.png"
 	},
 	{
 		"id": "002",
-		"name": "Orange",
-		"price": 2.34,
-		"pictureFilePath": "Cart.png"
+		"name": "Navel Oranges Bag / 3 lb bag",
+		"price": 5.99,
+		"pictureFilePath": ":/images/oranges.png"
 	},
 	{
 		"id": "003",
-		"name": "Banana",
-		"price": 3.45,
-		"pictureFilePath": "Cart.png"
+		"name": "Banana / per lb",
+		"price": 0.89,
+		"pictureFilePath": ":/images/banana.png"
+	},
+	{
+		"id": "004",
+		"name": "Organic Strawberries /16 oz",
+		"price": 5.99,
+		"pictureFilePath": ":/images/strawberries.png"
+	},
+	{
+		"id": "005",
+		"name": "Sprouts Whole Milk / 128 fl oz",
+		"price": 4.99,
+		"pictureFilePath": ":/images/milk.png"
+	},
+	{
+		"id": "006",
+		"name": "Sprouts Unsalted Butter / 16 oz",
+		"price": 4.99,
+		"pictureFilePath": ":/images/butter.png"
+	},
+	{
+		"id": "007",
+		"name": "Organic Valley Large Grade A Brown Eggs / 12 ct",
+		"price": 6.29,
+		"pictureFilePath": ":/images/eggs.png"
+	},
+	{
+		"id": "008",
+		"name": "Atlantic Salmon Fillet Farm Fresh / per lb",
+		"price": 13.99,
+		"pictureFilePath": ":/images/salmon.png"
+	},
+	{
+		"id": "009",
+		"name": "Pederson's Natural Farms Applewood Smoked Uncured Bacon / 10 oz",
+		"price": 8.99,
+		"pictureFilePath": ":/images/bacon.png"
+	},
+	{
+		"id": "0010",
+		"name": "Sprouts Boneless Skinless Chicken Breasts / per lb",
+		"price": 3.99,
+		"pictureFilePath": ":/images/chicken.png"
+	},
+	{
+		"id": "0011",
+		"name": "The Butche Shop 85% Grass-Fed Ground Beef / 16 oz",
+		"price": 6.99,
+		"pictureFilePath": ":/images/ground_beef.png"
 	}
+	
 ]

@@ -10,10 +10,10 @@ ListModel::ListModel(QObject *parent) : QStandardItemModel(parent)
     setData(index(3, 0), "Settings");
     setData(index(4, 0), "Quit");
 
-    setData(index(2, 0), QIcon(":/Cart.png"), Qt::DecorationRole);
-    setData(index(0, 0), QIcon(":/home_icon.png"), Qt::DecorationRole);
-    setData(index(1, 0), QIcon(":/qrcode_icon.png"), Qt::DecorationRole);
-    setData(index(3, 0), QIcon(":/settings_icon.png"), Qt::DecorationRole);
-    setData(index(4, 0), QIcon(":/quit_icon.png"), Qt::DecorationRole);
+    setData(index(2, 0), QIcon(":/images/Cart.png"), Qt::DecorationRole);
+    setData(index(0, 0), QIcon(":/images/home_icon.png"), Qt::DecorationRole);
+    setData(index(1, 0), QIcon(":/images/qrcode_icon.png"), Qt::DecorationRole);
+    setData(index(3, 0), QIcon(":/images/settings_icon.png"), Qt::DecorationRole);
+    setData(index(4, 0), QIcon(":/images/quit_icon.png"), Qt::DecorationRole);
 
 }
