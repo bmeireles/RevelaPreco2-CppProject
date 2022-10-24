@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionMain, &QAction::triggered, this, &MainWindow::onMainView);
     connect(ui->actionScan, &QAction::triggered, this, &MainWindow::onScanView);
     connect(ui->actionCart, &QAction::triggered, this, &MainWindow::onCartView);
+    connect(ui->actionWishlist, &QAction::triggered, this, &MainWindow::onWishlistView);
+    connect(ui->actionCompanies, &QAction::triggered, this, &MainWindow::onCompaniesView);
 
     model = new ListModel(this);
     ui->listView->setModel(model);
@@ -33,11 +35,11 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::onListViewClicked(const QModelIndex &index) {
-    if (index.row() <  3)
+    if (index.row() <  5)
         ui->stackedWidget->setCurrentIndex(index.row());
-    else if (index.row()  == 3) {
+    else if (index.row()  == 5) { //changed settings button to index 5
         onSettings();
-    } else if (index.row() == 4) {
+    } else if (index.row() == 6) { //changed quit button to index 6
         close();
     }
 }
@@ -64,5 +66,15 @@ void MainWindow::onScanView()
 void MainWindow::onCartView()
 {
     ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::onWishlistView()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void MainWindow::onCompaniesView()
+{
+    ui->stackedWidget->setCurrentIndex(4);
 }
 

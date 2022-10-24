@@ -1,9 +1,23 @@
 <RCC>
     <qresource prefix="/">
-        <file>Cart.png</file>
-        <file>home_icon.png</file>
-        <file>qrcode_icon.png</file>
-        <file>quit_icon.png</file>
-        <file>settings_icon.png</file>
+        <file>images/apples.png</file>
+        <file>images/bacon.png</file>
+        <file>images/banana.png</file>
+        <file>images/butter.png</file>
+        <file>images/Cart.png</file>
+        <file>images/chicken.png</file>
+        <file>images/companies.png</file>
+        <file>images/eggs.png</file>
+        <file>images/ground_beef.png</file>
+        <file>images/home_icon.png</file>
+        <file>images/milk.png</file>
+        <file>images/oranges.png</file>
+        <file>images/qrcode_icon.png</file>
+        <file>images/quit_icon.png</file>
+        <file>images/salmon.png</file>
+        <file>images/settings_icon.png</file>
+        <file>images/strawberries.png</file>
+        <file>images/wishlist.png</file>
+        <file>items.json</file>
     </qresource>
 </RCC>
