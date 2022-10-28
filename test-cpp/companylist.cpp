@@ -58,6 +58,8 @@ void CompanyList::addCompany(const Company &company)
 void CompanyList::removeCompany(const QString &id)
 {
     int index = findCompany(id);
+    //companies.remove(index); //error: no member named remove
+    //companies.erase(index);
 }
 
 void CompanyList::updateCompany(const Company &company)
@@ -98,12 +100,30 @@ QJsonObject Company::toJson() const
 
 void Company::fromJson(const QJsonObject &obj)
 {
-    // TODO: Check if all the fields exist
 
+    if (!obj.contains("id"))
+        qDebug() << "The field id in " << obj << " doesn't exist";
+        return;
     id = obj["id"].toString();
+
+    if (!obj.contains("name"))
+        qDebug() << "The field name in " << obj << " doesn't exist";
+        return;
     name = obj["name"].toString();
+
+    if (!obj.contains("address"))
+        qDebug() << "The field address in " << obj << " doesn't exist";
+        return;
     address = obj["address"].toString();
+
+    if (!obj.contains("pictureFilePath"))
+        qDebug() << "The field pictureFilePath in " << obj << " doesn't exist";
+        return;
     pictureFilePath = obj["pictureFilePath"].toString();
+
+    if (!obj.contains("regNumber"))
+        qDebug() << "The field regNumber in " << obj << " doesn't exist";
+        return;
     regNumber = obj["regNumber"].toString();
 }
 

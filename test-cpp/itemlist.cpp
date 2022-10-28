@@ -100,10 +100,24 @@ QJsonObject Item::toJson() const
 void Item::fromJson(const QJsonObject &obj)
 {
     // TODO: Check if all the fields exist
-
+    if (!obj.contains("id"))
+        qDebug() << "The field id in " << obj << " doesn't exist";
+        return;
     id = obj["id"].toString();
+
+    if (!obj.contains("name"))
+        qDebug() << "The field name in " << obj << " doesn't exist";
+        return;
     name = obj["name"].toString();
+
+    if (!obj.contains("price"))
+        qDebug() << "The field price in " << obj << " doesn't exist";
+        return;
     price = obj["price"].toDouble();
+
+    if (!obj.contains("pictureFilePath"))
+        qDebug() << "The field pictureFilePath in " << obj << " doesn't exist";
+        return;
     pictureFilePath = obj["pictureFilePath"].toString();
 }
 
