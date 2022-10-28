@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     companylist.cpp \
     itemlist.cpp \
+    linklabel.cpp \
     listmodel.cpp \
     listviewdelegate.cpp \
     main.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     companylist.h \
     itemlist.h \
+    linklabel.h \
     listmodel.h \
     listviewdelegate.h \
     mainview.h \

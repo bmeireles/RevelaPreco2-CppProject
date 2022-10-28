@@ -10,6 +10,7 @@ struct Item {
     QString name;
     double price;
     QString pictureFilePath;
+    QString itemUrl;
 
     QJsonObject toJson() const;
     void fromJson(const QJsonObject& obj);

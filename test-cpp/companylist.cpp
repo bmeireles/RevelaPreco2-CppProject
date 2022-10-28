@@ -1,4 +1,5 @@
 #include "companylist.h"
+#include "listviewdelegate.h"
 
 #include <QDebug>
 #include <QFile>
@@ -8,7 +9,6 @@
 
 CompanyList::CompanyList()
 {
-
 }
 
 void CompanyList::loadCompanyFile(const QString &filePath)
@@ -58,8 +58,7 @@ void CompanyList::addCompany(const Company &company)
 void CompanyList::removeCompany(const QString &id)
 {
     int index = findCompany(id);
-    //companies.remove(index); //error: no member named remove
-    //companies.erase(index);
+    companies.remove(index); //error: no member named remove
 }
 
 void CompanyList::updateCompany(const Company &company)
@@ -101,29 +100,34 @@ QJsonObject Company::toJson() const
 void Company::fromJson(const QJsonObject &obj)
 {
 
-    if (!obj.contains("id"))
+    if (!obj.contains("id")) {
         qDebug() << "The field id in " << obj << " doesn't exist";
         return;
+    }
     id = obj["id"].toString();
 
-    if (!obj.contains("name"))
+    if (!obj.contains("name")) {
         qDebug() << "The field name in " << obj << " doesn't exist";
         return;
+    }
     name = obj["name"].toString();
 
-    if (!obj.contains("address"))
+    if (!obj.contains("address")) {
         qDebug() << "The field address in " << obj << " doesn't exist";
         return;
+    }
     address = obj["address"].toString();
 
-    if (!obj.contains("pictureFilePath"))
+    if (!obj.contains("pictureFilePath")) {
         qDebug() << "The field pictureFilePath in " << obj << " doesn't exist";
         return;
+    }
     pictureFilePath = obj["pictureFilePath"].toString();
 
-    if (!obj.contains("regNumber"))
+    if (!obj.contains("regNumber")) {
         qDebug() << "The field regNumber in " << obj << " doesn't exist";
         return;
+    }
     regNumber = obj["regNumber"].toString();
 }
 
@@ -144,14 +148,14 @@ void CompanyModel::setList(CompanyList *list)
     setRowCount(data.count());
 
     int row = 0;
-//    for (auto itr = data.begin(); itr != data.end(); itr ++) {
-//        setData(index(row, 0), itr->id);
-//        setData(index(row, 0), itr->name, ListViewDelegate::DataRole::TitleRole);
-//        setData(index(row, 0), itr->address, ListViewDelegate::DataRole::TextRole);
-//        QIcon icon(itr->pictureFilePath);
-//        setData(index(row, 0), itr->regNumber, ListViewDelegate::DataRole::TitleRole);
-//        setData(index(row, 0), icon, Qt::DecorationRole);
-//        row ++;
-//    }
+    for (auto itr = data.begin(); itr != data.end(); itr ++) {
+        setData(index(row, 0), itr->id);
+        setData(index(row, 0), itr->name, ListViewDelegate::DataRole::TitleRole);
+        setData(index(row, 0), itr->address, ListViewDelegate::DataRole::TextRole);
+        QIcon icon(itr->pictureFilePath);
+        setData(index(row, 0), itr->regNumber, ListViewDelegate::DataRole::TitleRole);
+        setData(index(row, 0), icon, Qt::DecorationRole);
+        row ++;
+    }
 }
 

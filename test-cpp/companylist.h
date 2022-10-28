@@ -37,7 +37,6 @@ public:
 
 private:
     QList<Company> companies;
-
 };
 
 class CompanyModel: public QStandardItemModel {
