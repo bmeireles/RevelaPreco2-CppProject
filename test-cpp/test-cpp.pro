@@ -9,7 +9,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    companylist.cpp \
     itemlist.cpp \
+    linklabel.cpp \
     listmodel.cpp \
     listviewdelegate.cpp \
     main.cpp \
@@ -18,7 +20,9 @@ SOURCES += \
     settingsdialog.cpp
 
 HEADERS += \
+    companylist.h \
     itemlist.h \
+    linklabel.h \
     listmodel.h \
     listviewdelegate.h \
     mainview.h \

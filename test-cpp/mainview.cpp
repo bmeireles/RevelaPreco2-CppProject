@@ -1,5 +1,6 @@
 #include "mainview.h"
 #include "listviewdelegate.h"
+#include "linklabel.h"
 
 #include <QVBoxLayout>
 #include <QLabel>
@@ -42,12 +43,15 @@ MainView::MainView(QWidget *parent)
     auto nameEdit = new QLineEdit();
     auto priceEdit = new QDoubleSpinBox();
     auto companyEdit = new QLineEdit();
-    auto pictureView = new QLabel();
+    auto pictureView = new QLabel();  // TODO: load the picture
+    auto urlLabel = new LinkLabel();
     detailedLayout->addWidget(backButton);
     detailedLayout->addWidget(nameEdit);
     detailedLayout->addWidget(priceEdit);
     detailedLayout->addWidget(companyEdit);
     detailedLayout->addWidget(pictureView);
+    detailedLayout->addWidget(urlLabel);
+    detailedLayout->addStretch();
 
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->addWidget(stackedWidget);

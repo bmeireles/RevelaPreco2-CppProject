@@ -19,5 +19,6 @@
         <file>images/strawberries.png</file>
         <file>images/wishlist.png</file>
         <file>items.json</file>
+        <file>images/map.png</file>
     </qresource>
 </RCC>

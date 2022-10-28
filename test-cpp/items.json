@@ -3,7 +3,8 @@
 		"id": "001",
 		"name": "Organic Pink Lady Apples Bag / 2 lb bag",
 		"price": 3.99,
-		"pictureFilePath": ":/images/apples.png"
+		"pictureFilePath": ":/images/apples.png",
+		"itemUrl": "https://www.google.com/maps/place/Tacos+Jalapa/@37.3679631,-122.035709,17z/data=!3m1!4b1!4m5!3m4!1s0x808fb66158baef0b:0xccdccc7798b07ea5!8m2!3d37.3679631!4d-122.0335203"
 	},
 	{
 		"id": "002",

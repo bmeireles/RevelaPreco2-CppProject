@@ -60,7 +60,7 @@ void ItemList::addItem(const Item &item)
 void ItemList::removeItem(const QString &id)
 {
     int index = findItem(id);
-    //items.remove(index);
+    items.remove(index);
 }
 
 void ItemList::updateItem(const Item &item)
@@ -94,17 +94,42 @@ QJsonObject Item::toJson() const
     obj["name"] = name;
     obj["price"] = price;
     obj["pictureFilePath"] = pictureFilePath;
+    obj["itemURL"] = itemUrl;
     return obj;
 }
 
 void Item::fromJson(const QJsonObject &obj)
 {
     // TODO: Check if all the fields exist
-
+    if (!obj.contains("id")) {
+        qDebug() << "The field id in " << obj << " doesn't exist";
+        return;
+    }
     id = obj["id"].toString();
+
+    if (!obj.contains("name")) {
+        qDebug() << "The field name in " << obj << " doesn't exist";
+        return;
+    }
     name = obj["name"].toString();
+
+    if (!obj.contains("price")) {
+        qDebug() << "The field price in " << obj << " doesn't exist";
+        return;
+    }
     price = obj["price"].toDouble();
+
+    if (!obj.contains("pictureFilePath")) {
+        qDebug() << "The field pictureFilePath in " << obj << " doesn't exist";
+        return;
+    }
     pictureFilePath = obj["pictureFilePath"].toString();
+
+    if (!obj.contains("itemUrl")) {
+        qDebug() << "The field itemUrl in " << obj << " doesn't exist";
+        return;
+    }
+    itemUrl = obj["itemUrl"].toString();
 }
 
 ItemModel::ItemModel(QObject *parent) : QStandardItemModel(parent)
@@ -169,11 +194,8 @@ ItemModel::ItemModel(QObject *parent) : QStandardItemModel(parent)
 void ItemModel::setList(ItemList* list)
 {
     auto data = list->getItems();
-    setColumnCount(4);
-    setHeaderData(0, Qt::Horizontal, "ID");
-    setHeaderData(1, Qt::Horizontal, "Name");
-    setHeaderData(2, Qt::Horizontal, "Price");
-    setHeaderData(3, Qt::Horizontal, "Picture");
+    setColumnCount(5);
+    setHorizontalHeaderLabels(QStringList{"ID", "Name", "Price", "Picture", "URL"});
     setRowCount(data.count());
 
     int row = 0;
@@ -183,6 +205,7 @@ void ItemModel::setList(ItemList* list)
         setData(index(row, 0), itr->price, ListViewDelegate::DataRole::TextRole);
         QIcon icon(itr->pictureFilePath);
         setData(index(row, 0), icon, Qt::DecorationRole);
+        setData(index(row, 0), itr->itemUrl, ListViewDelegate::DataRole::UrlRole);
         row ++;
     }
 }

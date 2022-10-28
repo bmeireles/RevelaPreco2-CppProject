@@ -11,6 +11,7 @@ public:
     enum DataRole {
         TitleRole = Qt::UserRole + 1,
         TextRole,
+        UrlRole,
     };
 
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
