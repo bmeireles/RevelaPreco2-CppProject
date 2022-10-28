@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="MainView" name="pageMain"/>
       <widget class="QWidget" name="pageScan">
@@ -53,7 +53,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -62,6 +62,8 @@
     </property>
     <addaction name="actionSettings"/>
     <addaction name="actionQuit"/>
+    <addaction name="actionWishlist"/>
+    <addaction name="actionCompanies"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
@@ -133,6 +135,16 @@
   <action name="actionScan">
    <property name="text">
     <string>Scan</string>
+   </property>
+  </action>
+  <action name="actionWishlist">
+   <property name="text">
+    <string>Wishlist</string>
+   </property>
+  </action>
+  <action name="actionCompanies">
+   <property name="text">
+    <string>Companies</string>
    </property>
   </action>
  </widget>

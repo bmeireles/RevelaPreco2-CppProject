@@ -23,6 +23,8 @@ private:
     void onMainView();
     void onScanView();
     void onCartView();
+    void onWishlistView();
+    void onCompaniesView();
     void onListViewClicked(const QModelIndex &index);
 
 private:

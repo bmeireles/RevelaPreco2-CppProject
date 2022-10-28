@@ -1,5 +1,5 @@
 #include "mainview.h"
-#include "ListViewDelegate.h"
+#include "listviewdelegate.h"
 
 #include <QVBoxLayout>
 #include <QLabel>
