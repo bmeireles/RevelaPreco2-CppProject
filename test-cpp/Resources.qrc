@@ -20,5 +20,11 @@
         <file>images/wishlist.png</file>
         <file>items.json</file>
         <file>images/map.png</file>
+        <file>companies.json</file>
+        <file>images/amazon_fresh.png</file>
+        <file>images/kroger.png</file>
+        <file>images/shipt.png</file>
+        <file>images/walmart.png</file>
+        <file>images/whole_foods.png</file>
     </qresource>
 </RCC>

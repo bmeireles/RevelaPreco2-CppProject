@@ -1,6 +1,7 @@
 #include "linklabel.h"
 
 #include <QDesktopServices>
+#include <QIcon>
 
 LinkLabel::LinkLabel(QWidget *parent) : QLabel(parent)
 {

@@ -4,67 +4,77 @@
 		"name": "Organic Pink Lady Apples Bag / 2 lb bag",
 		"price": 3.99,
 		"pictureFilePath": ":/images/apples.png",
-		"itemUrl": "https://www.google.com/maps/place/Tacos+Jalapa/@37.3679631,-122.035709,17z/data=!3m1!4b1!4m5!3m4!1s0x808fb66158baef0b:0xccdccc7798b07ea5!8m2!3d37.3679631!4d-122.0335203"
+		"itemUrl": "https://www.google.com/maps/place/Amazon+Fresh/@34.1842126,-118.6113204,17z/data=!4m12!1m6!3m5!1s0x80c29dc1ed178daf:0xf3efbb1af94b7471!2sAmazon+Fresh!8m2!3d34.1842127!4d-118.6070932!3m4!1s0x80c29dc1ed178daf:0xf3efbb1af94b7471!8m2!3d34.1842127!4d-118.6070932?hl=pt-BR"
 	},
 	{
 		"id": "002",
 		"name": "Navel Oranges Bag / 3 lb bag",
 		"price": 5.99,
-		"pictureFilePath": ":/images/oranges.png"
+		"pictureFilePath": ":/images/oranges.png",
+		"itemUrl" : "https://www.google.com/maps/place/Walmart/@34.1878861,-118.6296621,17z/data=!3m1!4b1!4m5!3m4!1s0x80c29c32bc48538b:0x6f5d9f7792d1c6a!8m2!3d34.1878862!4d-118.6254349?hl=pt-BR"
 	},
 	{
 		"id": "003",
 		"name": "Banana / per lb",
 		"price": 0.89,
-		"pictureFilePath": ":/images/banana.png"
+		"pictureFilePath": ":/images/banana.png",
+		"itemUrl" : "https://www.google.com.br/maps/place/Kroger+Marketplace/@32.8675099,-98.1536162,7.54z/data=!4m9!1m2!2m1!1skroger!3m5!1s0x864c252e1d7d9e7b:0x3f260626d75a2489!8m2!3d33.0621978!4d-96.8891144!15sCgZrcm9nZXIiA4gBAVoIIgZrcm9nZXKSAQ1ncm9jZXJ5X3N0b3Jl4AEA"
 	},
 	{
 		"id": "004",
 		"name": "Organic Strawberries /16 oz",
 		"price": 5.99,
-		"pictureFilePath": ":/images/strawberries.png"
+		"pictureFilePath": ":/images/strawberries.png",
+		"itemUrl" : "https://www.google.com.br/maps/place/Whole+Foods+Market/@32.7000665,-98.9482842,8z/data=!4m9!1m2!2m1!1swhole+foods!3m5!1s0x864e72946292a515:0x6688874d047b1813!8m2!3d32.700038!4d-97.4129749!15sCgt3aG9sZSBmb29kcyIDiAEBWg0iC3dob2xlIGZvb2RzkgENZ3JvY2VyeV9zdG9yZeABAA"
 	},
 	{
 		"id": "005",
 		"name": "Sprouts Whole Milk / 128 fl oz",
 		"price": 4.99,
-		"pictureFilePath": ":/images/milk.png"
+		"pictureFilePath": ":/images/milk.png",
+		"itemUrl" : "https://www.google.com.br/maps/place/Shipt+Promo+Code/@36.9167846,-106.2857582,6z/data=!4m9!1m2!2m1!1sshipt!3m5!1s0x88c2eab662857159:0x6cce8ea342b9efcc!8m2!3d36.3509562!4d-95.1069732!15sCgVzaGlwdJIBGGdyb2NlcnlfZGVsaXZlcnlfc2VydmljZeABAA"
 	},
 	{
 		"id": "006",
 		"name": "Sprouts Unsalted Butter / 16 oz",
 		"price": 4.99,
-		"pictureFilePath": ":/images/butter.png"
+		"pictureFilePath": ":/images/butter.png",
+		"itemUrl" : "https://www.google.com/maps/place/Amazon+Fresh/@34.1842126,-118.6113204,17z/data=!4m12!1m6!3m5!1s0x80c29dc1ed178daf:0xf3efbb1af94b7471!2sAmazon+Fresh!8m2!3d34.1842127!4d-118.6070932!3m4!1s0x80c29dc1ed178daf:0xf3efbb1af94b7471!8m2!3d34.1842127!4d-118.6070932?hl=pt-BR"
 	},
 	{
 		"id": "007",
 		"name": "Organic Valley Large Grade A Brown Eggs / 12 ct",
 		"price": 6.29,
-		"pictureFilePath": ":/images/eggs.png"
+		"pictureFilePath": ":/images/eggs.png",
+		"itemUrl" : "https://www.google.com/maps/place/Walmart/@34.1878861,-118.6296621,17z/data=!3m1!4b1!4m5!3m4!1s0x80c29c32bc48538b:0x6f5d9f7792d1c6a!8m2!3d34.1878862!4d-118.6254349?hl=pt-BR"
 	},
 	{
 		"id": "008",
 		"name": "Atlantic Salmon Fillet Farm Fresh / per lb",
 		"price": 13.99,
-		"pictureFilePath": ":/images/salmon.png"
+		"pictureFilePath": ":/images/salmon.png",
+		"itemUrl" : "https://www.google.com.br/maps/place/Kroger+Marketplace/@32.8675099,-98.1536162,7.54z/data=!4m9!1m2!2m1!1skroger!3m5!1s0x864c252e1d7d9e7b:0x3f260626d75a2489!8m2!3d33.0621978!4d-96.8891144!15sCgZrcm9nZXIiA4gBAVoIIgZrcm9nZXKSAQ1ncm9jZXJ5X3N0b3Jl4AEA"
 	},
 	{
 		"id": "009",
 		"name": "Pederson's Natural Farms Applewood Smoked Uncured Bacon / 10 oz",
 		"price": 8.99,
-		"pictureFilePath": ":/images/bacon.png"
+		"pictureFilePath": ":/images/bacon.png",
+		"itemUrl" : "https://www.google.com.br/maps/place/Whole+Foods+Market/@32.7000665,-98.9482842,8z/data=!4m9!1m2!2m1!1swhole+foods!3m5!1s0x864e72946292a515:0x6688874d047b1813!8m2!3d32.700038!4d-97.4129749!15sCgt3aG9sZSBmb29kcyIDiAEBWg0iC3dob2xlIGZvb2RzkgENZ3JvY2VyeV9zdG9yZeABAA"
 	},
 	{
 		"id": "0010",
 		"name": "Sprouts Boneless Skinless Chicken Breasts / per lb",
 		"price": 3.99,
-		"pictureFilePath": ":/images/chicken.png"
+		"pictureFilePath": ":/images/chicken.png",
+		"itemUrl" : "https://www.google.com.br/maps/place/Shipt+Promo+Code/@36.9167846,-106.2857582,6z/data=!4m9!1m2!2m1!1sshipt!3m5!1s0x88c2eab662857159:0x6cce8ea342b9efcc!8m2!3d36.3509562!4d-95.1069732!15sCgVzaGlwdJIBGGdyb2NlcnlfZGVsaXZlcnlfc2VydmljZeABAA"
 	},
 	{
 		"id": "0011",
-		"name": "The Butche Shop 85% Grass-Fed Ground Beef / 16 oz",
+		"name": "The Butcher Shop 85% Grass-Fed Ground Beef / 16 oz",
 		"price": 6.99,
-		"pictureFilePath": ":/images/ground_beef.png"
+		"pictureFilePath": ":/images/ground_beef.png",
+		"itemUrl" : "https://www.google.com/maps/place/Amazon+Fresh/@34.1842126,-118.6113204,17z/data=!4m12!1m6!3m5!1s0x80c29dc1ed178daf:0xf3efbb1af94b7471!2sAmazon+Fresh!8m2!3d34.1842127!4d-118.6070932!3m4!1s0x80c29dc1ed178daf:0xf3efbb1af94b7471!8m2!3d34.1842127!4d-118.6070932?hl=pt-BR"
 	}
 	
 ]

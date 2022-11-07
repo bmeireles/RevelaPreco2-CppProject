@@ -1,0 +1,44 @@
+[
+	{
+		"id": "001",
+		"name": "Amazon Fresh",
+		"address": "1227 NE 124TH St Bldg 2 Seattle, WA, 98125-4825",
+		"pictureFilePath": ":/images/amazon_fresh.png",
+		"regNumber" : "3470761",
+		"companyUrl": "https://www.google.com/maps/place/Amazon+Fresh/@34.1842126,-118.6113204,17z/data=!4m12!1m6!3m5!1s0x80c29dc1ed178daf:0xf3efbb1af94b7471!2sAmazon+Fresh!8m2!3d34.1842127!4d-118.6070932!3m4!1s0x80c29dc1ed178daf:0xf3efbb1af94b7471!8m2!3d34.1842127!4d-118.6070932?hl=pt-BR"
+	},
+	{
+		"id": "002",
+		"name": "Walmart",
+		"adress": "702 SW 8th St, Bentonville, AR 72712",
+		"pictureFilePath": ":/images/walmart.png",
+		"regNumber" : "3612345",
+		"companyUrl": "https://www.google.com/maps/place/Walmart/@34.1878861,-118.6296621,17z/data=!3m1!4b1!4m5!3m4!1s0x80c29c32bc48538b:0x6f5d9f7792d1c6a!8m2!3d34.1878862!4d-118.6254349?hl=pt-BR"
+	},
+	{
+		"id": "003",
+		"name": "Kroger",
+		"address": "1014 Vine St, Cincinnati, OH 45202",
+		"pictureFilePath": ":/images/kroger.png",
+		"regNumber" : "0434669",
+		"companyUrl": "https://www.google.com.br/maps/place/Kroger+Marketplace/@32.8675099,-98.1536162,7.54z/data=!4m9!1m2!2m1!1skroger!3m5!1s0x864c252e1d7d9e7b:0x3f260626d75a2489!8m2!3d33.0621978!4d-96.8891144!15sCgZrcm9nZXIiA4gBAVoIIgZrcm9nZXKSAQ1ncm9jZXJ5X3N0b3Jl4AEA"
+	},
+	{
+		"id": "004",
+		"name": "Whole Foods",
+		"address": "550 Bowie Street Austin, TX 78703-4644",
+		"pictureFilePath": ":/images/whole_foods.png",
+		"regNumber" : "5237533",
+		"companyUrl": "https://www.google.com.br/maps/place/Whole+Foods+Market/@32.7000665,-98.9482842,8z/data=!4m9!1m2!2m1!1swhole+foods!3m5!1s0x864e72946292a515:0x6688874d047b1813!8m2!3d32.700038!4d-97.4129749!15sCgt3aG9sZSBmb29kcyIDiAEBWg0iC3dob2xlIGZvb2RzkgENZ3JvY2VyeV9zdG9yZeABAA"
+	},
+	{
+		"id": "005",
+		"name": "Shipt",
+		"address": "17 20th St. N Suite 100, Birmingham, AL, 35203",
+		"pictureFilePath": ":/images/shipt.png",
+		"regNumber" : "6286008",
+		"companyUrl": "https://www.google.com.br/maps/place/Shipt+Promo+Code/@36.9167846,-106.2857582,6z/data=!4m9!1m2!2m1!1sshipt!3m5!1s0x88c2eab662857159:0x6cce8ea342b9efcc!8m2!3d36.3509562!4d-95.1069732!15sCgVzaGlwdJIBGGdyb2NlcnlfZGVsaXZlcnlfc2VydmljZeABAA"
+	},
+	{
+	
+]
