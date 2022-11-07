@@ -58,7 +58,7 @@ void CompanyList::addCompany(const Company &company)
 void CompanyList::removeCompany(const QString &id)
 {
     int index = findCompany(id);
-    companies.remove(index); //error: no member named remove
+    companies.removeAt(index); //changed remove to removeAt
 }
 
 void CompanyList::updateCompany(const Company &company)
@@ -94,6 +94,7 @@ QJsonObject Company::toJson() const
     obj["address"] = address;
     obj["pictureFilePath"] = pictureFilePath;
     obj["regNumber"] = regNumber;
+    obj["companyUrl"] = companyUrl;
     return obj;
 }
 
@@ -129,6 +130,11 @@ void Company::fromJson(const QJsonObject &obj)
         return;
     }
     regNumber = obj["regNumber"].toString();
+    if (!obj.contains("companyUrl")) {
+        qDebug() << "The field companyUrl in " << obj << " doesn't exist";
+        return;
+    }
+    regNumber = obj["companyUrl"].toString();
 }
 
 CompanyModel::CompanyModel(QObject *parent): QStandardItemModel(parent)
@@ -139,12 +145,13 @@ CompanyModel::CompanyModel(QObject *parent): QStandardItemModel(parent)
 void CompanyModel::setList(CompanyList *list)
 {
     auto data = list->getCompanies();
-    setColumnCount(5);
+    setColumnCount(6);
     setHeaderData(0, Qt::Horizontal, "ID");
     setHeaderData(1, Qt::Horizontal, "Name");
     setHeaderData(2, Qt::Horizontal, "Address");
     setHeaderData(3, Qt::Horizontal, "Picture");
     setHeaderData(4, Qt::Horizontal, "Registration Number");
+    setHeaderData(5, Qt::Horizontal, "Company Url");
     setRowCount(data.count());
 
     int row = 0;

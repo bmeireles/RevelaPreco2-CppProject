@@ -1,6 +1,7 @@
 #include "mainview.h"
 #include "listviewdelegate.h"
 #include "linklabel.h"
+#include "detailedpage.h"
 
 #include <QVBoxLayout>
 #include <QLabel>
@@ -12,11 +13,12 @@
 MainView::MainView(QWidget *parent)
     : QWidget{parent}
 {
-    stackedWidget = new QStackedWidget();
-    auto overviewPage = new QWidget();
-    auto detailedPage = new QWidget();
-    stackedWidget->addWidget(overviewPage);
-    stackedWidget->addWidget(detailedPage);
+    stackedWidget = new QStackedWidget(); //create a stakedwidget in the mainview
+    auto overviewPage = new QWidget(); //create an overview window for all the products
+    auto detailedPage = new DetailedPage(); //create a detailed page for extra info about the
+    //products
+    stackedWidget->addWidget(overviewPage); //add the overviewpage to the stack
+    stackedWidget->addWidget(detailedPage); //add the detailedpage to the stack
 
     // overview page
     QVBoxLayout* overviewLayout = new QVBoxLayout(overviewPage);
@@ -38,6 +40,7 @@ MainView::MainView(QWidget *parent)
 
     // Detailed page
     // TODO: make detailed page a separate class
+    /*
     QVBoxLayout* detailedLayout = new QVBoxLayout(detailedPage);
     auto backButton = new QPushButton("<--");
     auto nameEdit = new QLineEdit();
@@ -52,14 +55,15 @@ MainView::MainView(QWidget *parent)
     detailedLayout->addWidget(pictureView);
     detailedLayout->addWidget(urlLabel);
     detailedLayout->addStretch();
+    */
 
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->addWidget(stackedWidget);
 
     connect(view, &QListView::clicked, this, &MainView::onItemClicked);
-    connect(backButton, &QPushButton::clicked, this, [this]() {
-       stackedWidget->setCurrentIndex(0);
-    });
+//    connect(backButton, &QPushButton::clicked, this, [this]() {
+//       stackedWidget->setCurrentIndex(0);
+//    }); it cant find backButton because it is inside the class
 }
 
 void MainView::onItemClicked(const QModelIndex &index)

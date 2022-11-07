@@ -12,8 +12,7 @@ struct Company {
     QString address;
     QString pictureFilePath;
     QString regNumber; //company's registration number
-    //QString locationPath; // path to find the company on google maps, this info shows
-    //up on the detailed page of the company
+    QString companyUrl;
 
     QJsonObject toJson() const;
     void fromJson(const QJsonObject& obj);

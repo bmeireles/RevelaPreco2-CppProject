@@ -60,7 +60,7 @@ void ItemList::addItem(const Item &item)
 void ItemList::removeItem(const QString &id)
 {
     int index = findItem(id);
-    items.remove(index);
+    items.removeAt(index); //changed remove to removeAt
 }
 
 void ItemList::updateItem(const Item &item)

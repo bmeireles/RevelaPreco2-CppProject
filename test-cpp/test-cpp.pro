@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     companylist.cpp \
+    detailedpage.cpp \
     itemlist.cpp \
     linklabel.cpp \
     listmodel.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 
 HEADERS += \
     companylist.h \
+    detailedpage.h \
     itemlist.h \
     linklabel.h \
     listmodel.h \
