@@ -14,9 +14,8 @@ MainView::MainView(QWidget *parent)
 {
     stackedWidget = new QStackedWidget(); //create a stakedwidget in the mainview
     auto overviewPage = new QWidget(); //create an overview window for all the products
-    detailedPage = new DetailedPage(); //create a detailed page for extra info about the
-    //products
     stackedWidget->addWidget(overviewPage); //add the overviewpage to the stack
+    detailedPage = new CustomizableDetailedPage(); //create a detailed page for extra info about the products
     stackedWidget->addWidget(detailedPage); //add the detailedpage to the stack
 
     // overview page
@@ -37,31 +36,17 @@ MainView::MainView(QWidget *parent)
     auto listdelegate = new ListViewDelegate(nullptr);
     view->setItemDelegate(listdelegate);
 
-    // Detailed page
-    // TODO: make detailed page a separate class
-    /*
-    QVBoxLayout* detailedLayout = new QVBoxLayout(detailedPage);
-    auto backButton = new QPushButton("<--");
-    auto nameEdit = new QLineEdit();
-    auto priceEdit = new QDoubleSpinBox();
-    auto companyEdit = new QLineEdit();
-    auto pictureView = new QLabel();  // TODO: load the picture
-    auto urlLabel = new LinkLabel();
-    detailedLayout->addWidget(backButton);
-    detailedLayout->addWidget(nameEdit);
-    detailedLayout->addWidget(priceEdit);
-    detailedLayout->addWidget(companyEdit);
-    detailedLayout->addWidget(pictureView);
-    detailedLayout->addWidget(urlLabel);
-    detailedLayout->addStretch();
-    */
-
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->addWidget(stackedWidget);
 
     connect(view, &QListView::clicked, this, &MainView::onItemClicked);
 
-    connect(detailedPage, &DetailedPage::backButtonClicked, this, [this]() {
+    // Detailed page
+    detailedPage->addField("Name", new QLineEdit);
+    detailedPage->addField("Price", new QDoubleSpinBox);
+    detailedPage->addField("Picture", new QLabel);
+    detailedPage->addField("Url", new LinkLabel);
+    connect(detailedPage, &CustomizableDetailedPage::backButtonClicked, this, [this]() {
         stackedWidget->setCurrentIndex(0);
     });
 }
@@ -74,5 +59,8 @@ void MainView::onItemClicked(const QModelIndex &index)
     stackedWidget->setCurrentIndex(1);
 
     // "copy" the data to the detailed page
-    detailedPage->setData(index);
+    detailedPage->setData("Name", index.data(ListViewDelegate::DataRole::TitleRole).toString());
+    detailedPage->setData("Price", index.data(ListViewDelegate::DataRole::TextRole).toDouble());
+    detailedPage->setData("Picture", index.data(Qt::DecorationRole).value<QIcon>());
+    detailedPage->setData("Url", index.data(ListViewDelegate::DataRole::UrlRole).toString());
 }

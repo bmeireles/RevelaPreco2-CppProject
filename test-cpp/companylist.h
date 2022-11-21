@@ -49,21 +49,21 @@ public:
     void setList(CompanyList* list);
 };
 
-class CompanyView : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit CompanyView(QWidget *parent = nullptr);
+//class CompanyView : public QWidget
+//{
+//    Q_OBJECT
+//public:
+//    explicit CompanyView(QWidget *parent = nullptr);
 
-private:
-    void onItemClicked(const QModelIndex &index);
+//private:
+//    void onItemClicked(const QModelIndex &index);
 
-private:
-    CompanyList* itemList{nullptr};
-    CompanyModel* model{nullptr};
-    QListView* view{nullptr};
-    QStackedWidget* stackedWidget{nullptr};
-//    DetailedPage* detailedPage{nullptr};
-};
+//private:
+//    CompanyList* itemList{nullptr};
+//    CompanyModel* model{nullptr};
+//    QListView* view{nullptr};
+//    QStackedWidget* stackedWidget{nullptr};
+////    DetailedPage* detailedPage{nullptr};
+//};
 
 #endif // COMPANYLIST_H

@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,7 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     companylist.cpp \
-    detailedpage.cpp \
+    customizabledetailedpage.cpp \
     itemlist.cpp \
     linklabel.cpp \
     listmodel.cpp \
@@ -22,7 +22,7 @@ SOURCES += \
 
 HEADERS += \
     companylist.h \
-    detailedpage.h \
+    customizabledetailedpage.h \
     itemlist.h \
     linklabel.h \
     listmodel.h \

@@ -4,6 +4,10 @@
 
 #include <QDebug>
 #include <QDialog>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QSqlTableModel>
 #include <QTableView>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -27,6 +31,33 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->listView, &QListView::clicked, this, &MainWindow::onListViewClicked);
 
     settingsDlg = new SettingsDialog;
+
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("test.db");
+    bool ok = db.open();
+    qDebug() << "db add" << ok;
+    qDebug() << "open db" << db.open();
+
+    QSqlQuery query;
+    query.exec("create table person (id int primary key, "
+               "firstname varchar(20), lastname varchar(20))");
+    query.exec("insert into person values(101, 'Danny', 'Young')");
+    query.exec("insert into person values(102, 'Christine', 'Holand')");
+    query.exec("insert into person values(103, 'Lars', 'Gordon')");
+    query.exec("insert into person values(104, 'Roberto', 'Robitaille')");
+    query.exec("insert into person values(105, 'Maria', 'Papadopoulos')");
+
+//    auto queryModel = new QSqlQueryModel;
+//    queryModel->setQuery("select firstname, lastname from person order by lastname");
+
+    auto model = new QSqlTableModel;
+    model->setTable("person");
+    model->select();
+
+    auto tableView = new QTableView;
+    tableView->setModel(model);
+    tableView->show();
 }
 
 MainWindow::~MainWindow()
