@@ -23,7 +23,7 @@ public:
     ItemList();
 
     void loadFromFile(const QString& filePath);
-//    void loadFromDB();
+    void loadFromDB();
 //    void saveToFile(const QString& filePath);
 //    void saveToDB();
 

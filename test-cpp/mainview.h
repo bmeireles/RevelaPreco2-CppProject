@@ -2,7 +2,7 @@
 #define MAINVIEW_H
 
 #include "itemlist.h"
-#include "detailedpage.h"
+#include "customizabledetailedpage.h"
 
 #include <QListView>
 #include <QStackedWidget>
@@ -22,7 +22,7 @@ private:
     ItemModel* model{nullptr};
     QListView* view{nullptr};
     QStackedWidget* stackedWidget{nullptr};
-    DetailedPage* detailedPage{nullptr};
+    CustomizableDetailedPage* detailedPage{nullptr};
 };
 
 #endif // MAINVIEW_H

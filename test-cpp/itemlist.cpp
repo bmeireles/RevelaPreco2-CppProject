@@ -6,6 +6,7 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QSqlQuery>
 
 ItemList::ItemList()
 {
@@ -47,6 +48,15 @@ void ItemList::loadFromFile(const QString &filePath)
         addItem(item);
         qDebug() << item.toJson();
     }
+}
+
+void ItemList::loadFromDB()
+{
+//    QSqlQuery query;
+//    query.exec("select * from table");
+//    while (query.next()) {
+//        query.result()->data(0);
+//    }
 }
 
 void ItemList::addItem(const Item &item)
